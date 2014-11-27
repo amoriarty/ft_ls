@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/26 14:28:05 by alegent           #+#    #+#             */
-/*   Updated: 2014/11/26 14:40:54 by alegent          ###   ########.fr       */
+/*   Created: 2014/11/26 18:56:30 by alegent           #+#    #+#             */
+/*   Updated: 2014/11/27 13:02:36 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "ft_ls.h"
+#include "struct.h"
 
-void				ft_lstadd(t_list **alst, t_list *new)
+/*
+** Un commentaire
+*/
+
+int					main(void)
 {
-	new->next = *alst;
-	*alst = new;
+	ft_putendl("Hello World !");
+	return (42);
 }

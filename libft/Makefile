@@ -6,7 +6,7 @@
 #    By: alegent <alegent@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/10 16:50:19 by alegent           #+#    #+#              #
-#    Updated: 2014/11/26 15:18:34 by alegent          ###   ########.fr        #
+#    Updated: 2014/11/27 17:48:13 by alegent          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,13 +63,7 @@ SRCS=	ft_putchar.c \
 		ft_strjoin.c \
 		ft_itoa.c \
 		ft_strtrim.c \
-		ft_strsplit.c \
-		ft_lstnew.c \
-		ft_lstdelone.c \
-		ft_lstdel.c \
-		ft_lstadd.c \
-		ft_lstend.c \
-		ft_lstdelete.c
+		ft_strsplit.c
 
 OBJT=	ft_putchar.o \
 		ft_putstr.o \
@@ -122,13 +116,7 @@ OBJT=	ft_putchar.o \
 		ft_strjoin.o \
 		ft_itoa.o \
 		ft_strtrim.o \
-		ft_strsplit.o \
-		ft_lstnew.o \
-		ft_lstdelone.o \
-		ft_lstdel.o \
-		ft_lstadd.o \
-		ft_lstend.o \
-		ft_lstdelete.o
+		ft_strsplit.o
 
 GCC= gcc -Wall -Werror -Wextra
 
@@ -141,7 +129,7 @@ $(NAME): $(OBJT)
 $(OBJT):
 	$(GCC) -c $(SRCS) -I includes
 
-clean:
+clean: re
 	rm -f $(OBJT) libft.h.gch
 
 fclean:
