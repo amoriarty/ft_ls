@@ -15,7 +15,7 @@
 #include "struct.h"
 
 /*
-** Un commentaire
+** Coucou mon amour !!!!
 */
 
 int					main(void)
