@@ -6,26 +6,42 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/26 18:56:30 by alegent           #+#    #+#             */
-/*   Updated: 2014/11/28 10:47:13 by alegent          ###   ########.fr       */
+/*   Updated: 2014/11/28 12:38:50 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <dirent.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <time.h>
 #include "libft.h"
 #include "ft_ls.h"
 #include "struct.h"
 
 int					main(int ac, char **av)
 {
-	t_opt			*option;
+	DIR				*my_dir;
+	t_dirent		*my_dirent;
+	t_stat			my_stat;
+	t_time			*my_time;
 
-	option = init_opt();
+	my_dir = NULL;
+	my_dirent = NULL;
+	my_time = NULL;
 	if (ac > 1)
 	{
-		manage_opt(option, av);
-		ft_putnbr(option->opt_rec);
-		ft_putchar(EOL);
-		ft_putnbr(option->opt_l);
-		ft_putchar(EOL);
+		if ((my_dir = opendir(av[1])) == NULL)
+			return (ERROR);
+		while ((my_dirent = readdir(my_dir)))
+		{
+			stat(my_dirent->d_name, &my_stat);
+			time_info(&my_stat.st_mtime, my_time);
+			ft_putendl(my_time->month);
+			ft_putendl(my_time->day);
+			ft_putstr(my_time->hour);
+			ft_putchar(':');
+			ft_putendl(my_time->minute);
+		}
 	}
 	return (42);
 }

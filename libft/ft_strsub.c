@@ -6,7 +6,7 @@
 /*   By: alegent <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 16:32:41 by alegent           #+#    #+#             */
-/*   Updated: 2014/11/17 16:51:25 by alegent          ###   ########.fr       */
+/*   Updated: 2014/11/28 12:40:52 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char		*ft_strsub(char const *s, unsigned int start, size_t len)
 	if (s == NULL)
 		return (NULL);
 	x = 0;
-	res = ft_strnew((len - start));
+	res = ft_strnew((len));
 	if (res == NULL)
 		return (NULL);
 	while (x < len)
