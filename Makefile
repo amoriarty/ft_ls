@@ -6,7 +6,7 @@
 #    By: alegent <alegent@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/26 18:51:25 by alegent           #+#    #+#              #
-#    Updated: 2014/11/28 12:02:20 by alegent          ###   ########.fr        #
+#    Updated: 2014/11/28 15:40:34 by alegent          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,12 +15,14 @@ NAME= ft_ls
 SRCS= srcs/main.c \
 	  srcs/option.c \
 	  srcs/error.c \
-	  srcs/time.c
+	  srcs/time.c \
+	  srcs/print.c
 
 OBJT= main.o \
 	  option.o \
 	  error.o \
-	  time.o
+	  time.o \
+	  print.o
 
 GCC= gcc -Wall -Wextra -Werror
 
