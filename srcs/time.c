@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/28 11:40:22 by alegent           #+#    #+#             */
-/*   Updated: 2014/11/28 12:36:19 by alegent          ###   ########.fr       */
+/*   Updated: 2014/11/28 13:52:03 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,17 @@
 #include "libft.h"
 #include "ft_ls.h"
 #include "struct.h"
+
+void				ft_print_time(t_time *info)
+{
+	ft_putendl(info->complet);
+	ft_putendl(info->month);
+	ft_putendl(info->day);
+	ft_putstr(info->hour);
+	ft_putchar(':');
+	ft_putendl(info->minute);
+	ft_putendl(info->year);
+}
 
 t_time				*init_time(void)
 {

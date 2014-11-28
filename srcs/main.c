@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/26 18:56:30 by alegent           #+#    #+#             */
-/*   Updated: 2014/11/28 12:38:50 by alegent          ###   ########.fr       */
+/*   Updated: 2014/11/28 12:50:39 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,7 @@ int					main(int ac, char **av)
 		{
 			stat(my_dirent->d_name, &my_stat);
 			time_info(&my_stat.st_mtime, my_time);
-			ft_putendl(my_time->month);
-			ft_putendl(my_time->day);
-			ft_putstr(my_time->hour);
-			ft_putchar(':');
-			ft_putendl(my_time->minute);
+			ft_print_time(my_time);
 		}
 	}
 	return (42);

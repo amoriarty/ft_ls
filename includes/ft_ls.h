@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 13:01:19 by alegent           #+#    #+#             */
-/*   Updated: 2014/11/28 12:35:40 by alegent          ###   ########.fr       */
+/*   Updated: 2014/11/28 13:52:04 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int					manage_opt(t_opt *option, char **av);
 ** Fonction de recuperation et de decoupage de temps.
 */
 
+void				ft_print_time(t_time *info);
 t_time				*init_time(void);
 t_time				*time_info(time_t *clock, t_time *my_time);
 
