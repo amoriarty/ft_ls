@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 12:59:53 by alegent           #+#    #+#             */
-/*   Updated: 2014/11/27 13:15:46 by alegent          ###   ########.fr       */
+/*   Updated: 2014/11/28 09:36:30 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ typedef struct s_opt			t_opt;
 struct							s_opt
 {
 	unsigned int				opt_l;
-	unsigned int				opt_rr;
+	unsigned int				opt_rec;
 	unsigned int				opt_a;
 	unsigned int				opt_r;
 	unsigned int				opt_t;

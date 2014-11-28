@@ -6,15 +6,19 @@
 #    By: alegent <alegent@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/26 18:51:25 by alegent           #+#    #+#              #
-#    Updated: 2014/11/27 12:25:49 by alegent          ###   ########.fr        #
+#    Updated: 2014/11/28 10:10:05 by alegent          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= ft_ls
 
-SRCS= srcs/main.c
+SRCS= srcs/main.c \
+	  srcs/option.c \
+	  srcs/error.c
 
-OBJT= main.o
+OBJT= main.o \
+	  option.o \
+	  error.o
 
 GCC= gcc -Wall -Wextra -Werror
 
