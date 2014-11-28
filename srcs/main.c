@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/26 18:56:30 by alegent           #+#    #+#             */
-/*   Updated: 2014/11/28 15:35:36 by alegent          ###   ########.fr       */
+/*   Updated: 2014/11/28 17:46:49 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,9 @@ int					main(int ac, char **av)
 	DIR				*my_dir;
 	t_dirent		*my_dirent;
 	t_stat			my_stat;
-	t_time			*my_time;
 
 	my_dir = NULL;
 	my_dirent = NULL;
-	my_time = NULL;
 	if (ac > 1)
 	{
 		if ((my_dir = opendir(av[1])) == NULL)
@@ -35,8 +33,7 @@ int					main(int ac, char **av)
 		while ((my_dirent = readdir(my_dir)))
 		{
 			stat(my_dirent->d_name, &my_stat);
-			my_time = time_info(&my_stat.st_mtime, &my_time);
-			ft_print_time(my_time);
+			print_global(&my_stat, my_dirent->d_name);
 		}
 	}
 	return (42);
