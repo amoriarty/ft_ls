@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 12:59:53 by alegent           #+#    #+#             */
-/*   Updated: 2014/11/28 16:55:54 by alegent          ###   ########.fr       */
+/*   Updated: 2014/11/29 15:32:59 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,19 @@ struct							s_opt
 	unsigned int				opt_a;
 	unsigned int				opt_r;
 	unsigned int				opt_t;
+};
+
+/*
+** Structure type liste chainee permettant le tri de chaque entrer
+** renvoyer par readdir.
+*/
+
+typedef struct s_entry			t_entry;
+struct							s_entry
+{
+	char						*name;
+	t_stat						*info;
+	t_entry						*next;
 };
 
 #endif
