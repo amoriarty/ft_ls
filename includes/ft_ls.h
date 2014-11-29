@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 13:01:19 by alegent           #+#    #+#             */
-/*   Updated: 2014/11/28 17:42:02 by alegent          ###   ########.fr       */
+/*   Updated: 2014/11/29 10:10:28 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,11 @@ void				print_perm(mode_t info);
 void				print_usr(uid_t usr, gid_t gr);
 void				print_time(t_time *info);
 void				print_global(t_stat *info, char *name);
+
+/*
+** Fonction(s) de lecture du dossier.
+*/
+
+int					lecture(char *dir_name, t_opt *option);
 
 #endif
