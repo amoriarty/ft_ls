@@ -6,7 +6,7 @@
 #    By: alegent <alegent@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/26 18:51:25 by alegent           #+#    #+#              #
-#    Updated: 2014/11/29 09:32:46 by alegent          ###   ########.fr        #
+#    Updated: 2014/12/02 13:48:25 by alegent          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,15 +16,21 @@ SRCS= srcs/main.c \
 	  srcs/option.c \
 	  srcs/error.c \
 	  srcs/time.c \
-	  srcs/print.c \
-	  srcs/lecture.c
+	  srcs/print_long.c \
+	  srcs/lecture.c \
+	  srcs/print_opt.c \
+	  srcs/ft_annex.c \
+	  srcs/list.c
 
 OBJT= main.o \
 	  option.o \
 	  error.o \
 	  time.o \
-	  print.o \
-	  lecture.o
+	  print_long.o \
+	  lecture.o \
+	  print_opt.o \
+	  ft_annex.o \
+	  list.o
 
 GCC= gcc -Wall -Wextra -Werror
 

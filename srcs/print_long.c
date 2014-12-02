@@ -1,24 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   print_long.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/28 15:36:02 by alegent           #+#    #+#             */
-/*   Updated: 2014/11/28 17:50:24 by alegent          ###   ########.fr       */
+/*   Created: 2014/12/02 11:18:11 by alegent           #+#    #+#             */
+/*   Updated: 2014/12/02 13:23:19 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <sys/time.h>
-#include <time.h>
-#include <grp.h>
-#include <pwd.h>
-#include "libft.h"
 #include "ft_ls.h"
-#include "struct.h"
+
+/*
+void				print_rec(t_entry *my_entry, t_stat *my_stat, t_opt *op)
+{
+	if ((ft_strcmp(my_entry->name, ".") != 0)
+			&& (ft_strcmp(my_entry->name, "..") != 0)
+			&& (is_hidden(my_entry->name) == FALSE))
+	{
+		ft_putstr("./");
+		ft_putstr(my_entry->name);
+		ft_putendl(":");
+		if (op->opt_a == TRUE && op->opt_l == TRUE)
+			print_global(my_stat, my_entry->name);
+		else if (op->opt_a == FALSE && op->opt_l == TRUE)
+		{
+			if (is_hidden(my_entry->name) == FALSE)
+				print_global(my_stat, my_entry->name);
+		}
+		else if (op->opt_a == TRUE && op->opt_l == FALSE)
+			ft_putendl(my_entry->name);
+		else
+		{
+			if (is_hidden(my_entry->name) == FALSE)
+				ft_putendl(my_entry->name);
+		}
+	}
+}
+*/
 
 void				print_perm(mode_t info)
 {

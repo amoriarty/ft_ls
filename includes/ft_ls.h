@@ -6,13 +6,19 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 13:01:19 by alegent           #+#    #+#             */
-/*   Updated: 2014/11/29 10:10:28 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/02 14:10:31 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LS_H
 # define FT_LS_H
+# include <dirent.h>
 # include <sys/types.h>
+# include <sys/stat.h>
+# include <time.h>
+# include <grp.h>
+# include <pwd.h>
+# include "libft.h"
 # include "struct.h"
 # define TRUE 1
 # define FALSE 0
@@ -50,9 +56,29 @@ void				print_time(t_time *info);
 void				print_global(t_stat *info, char *name);
 
 /*
+** Fonction d'affichage selon option.
+*/
+
+void				print_l(t_entry *my_entry, t_stat *info, t_opt *option);
+void				print_rec(t_entry *my_entry, t_stat *info, t_opt *option);
+
+/*
+** Fonctions de gestions des listes doublements chainee.
+*/
+
+t_dlist				*new_list(void);
+t_dlist				*append(t_dlist *list, char *name, t_stat *info);
+
+/*
 ** Fonction(s) de lecture du dossier.
 */
 
 int					lecture(char *dir_name, t_opt *option);
+
+/*
+** Fonctions annexes.
+*/
+
+int					is_hidden(char *name);
 
 #endif

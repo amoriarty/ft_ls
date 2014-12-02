@@ -6,11 +6,10 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/26 19:01:05 by alegent           #+#    #+#             */
-/*   Updated: 2014/11/28 11:07:22 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/02 13:22:44 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "ft_ls.h"
 
 t_opt				*init_opt(void)

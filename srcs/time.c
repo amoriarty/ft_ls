@@ -6,15 +6,11 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/28 11:40:22 by alegent           #+#    #+#             */
-/*   Updated: 2014/11/28 15:41:45 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/02 13:23:40 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/types.h>
-#include <time.h>
-#include "libft.h"
 #include "ft_ls.h"
-#include "struct.h"
 
 t_time				*init_time(t_time **my_time)
 {
