@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 13:01:19 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/02 14:10:31 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/02 15:41:14 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,8 @@ void				print_rec(t_entry *my_entry, t_stat *info, t_opt *option);
 */
 
 t_dlist				*new_list(void);
-t_dlist				*append(t_dlist *list, char *name, t_stat *info);
+t_dlist				*append(t_dlist *list, char *name);
+t_dlist				*prepend(t_dlist *list, char *name);
 
 /*
 ** Fonction(s) de lecture du dossier.
