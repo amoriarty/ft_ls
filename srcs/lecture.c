@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/29 09:20:11 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/02 15:40:46 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/02 15:57:17 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int					lecture(char *dir_name, t_opt *option)
 	if ((my_dir = opendir(dir_name)) == NULL)
 		return (ERROR);
 	while ((my_dirent = readdir(my_dir)) && (option != NULL))
-		list = prepend(list, my_dirent->d_name);
+		list = append(list, my_dirent->d_name);
 	closedir(my_dir);
 	tmp = list->begin;
 	while (tmp != NULL)
