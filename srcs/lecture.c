@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/29 09:20:11 by alegent           #+#    #+#             */
-/*   Updated: 2014/11/29 15:32:57 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/02 09:33:17 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,41 @@
 #include "libft.h"
 #include "ft_ls.h"
 #include "struct.h"
+
+static int			is_hidden(char *name)
+{
+	if (name[0] == '.')
+		return (TRUE);
+	return (FALSE);
+}
+
+static void			print(t_entry *my_entry, t_opt *option, t_stat *my_stat)
+{
+	t_entry			*tmp;
+
+	tmp = my_entry;
+	while (tmp != NULL)
+	{
+		if ((S_ISDIR(my_stat->st_mode)) && (option->opt_rec == TRUE))
+			lecture(my_entry->name, option);
+		if (option->opt_l == TRUE && option->opt_a == TRUE)
+			print_global(my_stat, my_entry->name);
+		else if (option->opt_l == TRUE && option->opt_a == FALSE)
+		{
+			if (is_hidden(my_entry->name) == FALSE)
+				print_global(my_stat, my_entry->name);
+		}
+		else if (option->opt_l == FALSE && option->opt_a == TRUE)
+			ft_putendl(my_entry->name);
+		else
+		{
+			if (is_hidden(my_entry->name) == FALSE)
+				ft_putendl(my_entry->name);
+		}
+		tmp = tmp->next;
+	}
+	free(tmp);
+}
 
 static t_entry		*tri(char *name, t_stat *info, t_entry *begin)
 {
@@ -47,7 +82,6 @@ int					lecture(char *dir_name, t_opt *option)
 	t_dirent		*my_dirent;
 	t_stat			my_stat;
 	t_entry			*my_entry;
-	t_entry			*tmp;
 
 	my_dir = NULL;
 	my_dirent = NULL;
@@ -71,13 +105,7 @@ int					lecture(char *dir_name, t_opt *option)
 			ft_putendl(my_dirent->d_name);
 			*/
 		my_entry = tri(my_dirent->d_name, &my_stat, my_entry);
-		tmp = my_entry;
-		while (tmp != NULL)
-		{
-			ft_putendl(tmp->name);
-			tmp = tmp->next;
-		}
-		free(tmp);
+		print(my_entry, option, &my_stat);
 	}
 	closedir(my_dir);
 	return (TRUE);
