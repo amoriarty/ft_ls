@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 13:01:19 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/02 15:52:56 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/03 09:18:15 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,6 @@ int					lecture(char *dir_name, t_opt *option);
 */
 
 int					is_hidden(char *name);
+size_t				digitlen(int n);
 
 #endif
