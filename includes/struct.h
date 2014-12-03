@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 12:59:53 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/02 14:06:06 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/03 14:17:55 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ struct							s_opt
 	unsigned int				opt_a;
 	unsigned int				opt_r;
 	unsigned int				opt_t;
+	unsigned int				opt_s;
 };
 
 /*

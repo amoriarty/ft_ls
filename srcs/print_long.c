@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/02 11:18:11 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/03 11:13:00 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/03 14:21:34 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void				print_long(t_dlist *list)
 
 	my_time = NULL;
 	tmp = list->begin;
+	print_total(list);
 	while (tmp != NULL)
 	{
 		print_perm(tmp->info->st_mode);

@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 13:01:19 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/03 11:14:37 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/03 14:21:53 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ size_t				len_nlink(t_dlist *list);
 size_t				len_size(t_dlist *list);
 size_t				len_usr(t_dlist *list);
 size_t				len_grp(t_dlist *list);
+void				print_total(t_dlist *list);
 
 /*
 ** Fonctions de gestions des listes doublements chainee.

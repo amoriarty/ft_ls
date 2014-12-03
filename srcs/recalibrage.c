@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/03 10:01:17 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/03 11:08:24 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/03 14:20:51 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,21 @@ size_t				len_grp(t_dlist *list)
 		tmp = tmp->next;
 	}
 	return (len);
+}
+
+void				print_total(t_dlist *list)
+{
+	size_t			size;
+	t_entry			*tmp;
+
+	size = 0;
+	tmp = list->begin;
+	while (tmp != NULL)
+	{
+		size += tmp->info->st_blocks;
+		tmp = tmp->next;
+	}
+	ft_putstr("total ");
+	ft_putnbr(size);
+	ft_putchar(EOL);
 }
