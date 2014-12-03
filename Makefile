@@ -6,7 +6,7 @@
 #    By: alegent <alegent@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/26 18:51:25 by alegent           #+#    #+#              #
-#    Updated: 2014/12/03 10:16:32 by alegent          ###   ########.fr        #
+#    Updated: 2014/12/03 11:14:58 by alegent          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ SRCS= srcs/main.c \
 	  srcs/time.c \
 	  srcs/print_long.c \
 	  srcs/lecture.c \
-	  srcs/print_opt.c \
 	  srcs/ft_annex.c \
 	  srcs/list.c \
 	  srcs/recalibrage.c
@@ -29,7 +28,6 @@ OBJT= main.o \
 	  time.o \
 	  print_long.o \
 	  lecture.o \
-	  print_opt.o \
 	  ft_annex.o \
 	  list.o \
 	  recalibrage.o

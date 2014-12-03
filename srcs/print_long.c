@@ -6,11 +6,20 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/02 11:18:11 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/03 10:58:56 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/03 11:13:00 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
+
+static void			recalibrage(size_t max)
+{
+	size_t			len;
+
+	len = 0;
+	while (len++ < max)
+		ft_putchar(' ');
+}
 
 void				print_perm(mode_t info)
 {
@@ -27,15 +36,17 @@ void				print_perm(mode_t info)
 	ft_putchar (' ');
 }
 
-void				print_usr(uid_t usr, gid_t gr)
+void				print_usr(uid_t usr, gid_t gr, t_dlist *list)
 {
 	t_passwd		*my_passwd;
 	t_group			*my_grp;
 
 	my_passwd = getpwuid(usr);
 	my_grp = getgrgid(gr);
+	recalibrage(len_usr(list) - ft_strlen(my_passwd->pw_name));
 	ft_putstr(my_passwd->pw_name);
 	ft_putchar(' ');
+	recalibrage(len_grp(list) - ft_strlen(my_grp->gr_name));
 	ft_putstr(my_grp->gr_name);
 	ft_putchar(' ');
 }
@@ -52,33 +63,6 @@ void				print_time(t_time *info)
 	ft_putchar(' ');
 }
 
-/*
-void				print_global(t_stat *info, char *name)
-{
-	t_time			*my_time;
-
-	my_time = NULL;
-	print_perm(info->st_mode);
-	ft_putnbr(info->st_nlink);
-	ft_putchar(' ');
-	print_usr(info->st_uid, info->st_gid);
-	ft_putnbr(info->st_size);
-	ft_putchar(' ');
-	my_time = time_info(&info->st_mtime, &my_time);
-	print_time(my_time);
-	ft_putendl(name);
-}
-*/
-
-static void			recalibrage(size_t max)
-{
-	size_t			len;
-
-	len = 0;
-	while (len++ <= max)
-		ft_putchar(' ');
-}
-
 void				print_long(t_dlist *list)
 {
 	t_entry			*tmp;
@@ -92,7 +76,7 @@ void				print_long(t_dlist *list)
 		recalibrage(len_nlink(list) - digitlen(tmp->info->st_nlink));
 		ft_putnbr(tmp->info->st_nlink);
 		ft_putchar(' ');
-		print_usr(tmp->info->st_uid, tmp->info->st_gid);
+		print_usr(tmp->info->st_uid, tmp->info->st_gid, list);
 		recalibrage(len_size(list) - digitlen(tmp->info->st_size));
 		ft_putnbr(tmp->info->st_size);
 		ft_putchar(' ');
