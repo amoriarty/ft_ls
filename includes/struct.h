@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 12:59:53 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/03 14:17:55 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/03 14:46:48 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ typedef struct s_entry			t_entry;
 struct							s_entry
 {
 	char						*name;
+	char						*path;
 	t_stat						*info;
 	t_entry						*next;
 	t_entry						*prec;

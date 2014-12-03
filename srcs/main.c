@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/26 18:56:30 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/02 13:22:35 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/03 16:40:50 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,7 @@ int					main(int ac, char **av)
 		manage_opt(&option, av);
 		lecture(av[2], &option);
 	}
+	if (ac == 1)
+		lecture(".", NULL);
 	return (42);
 }

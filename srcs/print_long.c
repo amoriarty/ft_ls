@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/02 11:18:11 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/03 14:21:34 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/03 15:03:33 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ void				print_usr(uid_t usr, gid_t gr, t_dlist *list)
 
 	my_passwd = getpwuid(usr);
 	my_grp = getgrgid(gr);
-	recalibrage(len_usr(list) - ft_strlen(my_passwd->pw_name));
 	ft_putstr(my_passwd->pw_name);
+	recalibrage(len_usr(list) - ft_strlen(my_passwd->pw_name));
 	ft_putchar(' ');
-	recalibrage(len_grp(list) - ft_strlen(my_grp->gr_name));
 	ft_putstr(my_grp->gr_name);
+	recalibrage(len_grp(list) - ft_strlen(my_grp->gr_name));
 	ft_putchar(' ');
 }
 
