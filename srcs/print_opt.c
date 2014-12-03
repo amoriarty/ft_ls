@@ -6,23 +6,24 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/02 10:22:58 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/02 15:56:27 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/03 10:26:58 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void				print_l(t_entry *my_entry, t_stat *info, t_opt *option)
+/*
+void				print_l(t_dlist *list, t_opt *option)
 {
 	if (option->opt_l == TRUE)
 	{
 		if (option->opt_a == FALSE)
 		{
 			if (is_hidden(my_entry->name) == FALSE)
-				print_global(info, my_entry->name);
+				print_long(list);
 		}
 		else
-			print_global(info, my_entry->name);
+			print_long(list);
 	}
 }
 
@@ -49,3 +50,4 @@ void				print_rec(t_entry *my_entry, t_stat *info, t_opt *option)
 		tmp = tmp->next;
 	}
 }
+*/

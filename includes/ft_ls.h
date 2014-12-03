@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 13:01:19 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/03 09:18:15 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/03 10:27:09 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,23 @@ t_time				*time_info(time_t *clock, t_time **my_time);
 void				print_perm(mode_t info);
 void				print_usr(uid_t usr, gid_t gr);
 void				print_time(t_time *info);
-void				print_global(t_stat *info, char *name);
+void				print_long(t_dlist *list);
+
+/*
+** Fonctions de calcul de taille afin d'effecture le recalibrage
+** de l'affichage au format long.
+*/
+
+size_t				len_nlink(t_dlist *list);
+size_t				len_size(t_dlist *list);
 
 /*
 ** Fonction d'affichage selon option.
 */
-
-void				print_l(t_entry *my_entry, t_stat *info, t_opt *option);
+/*
+void				print_l(t_dlist *list, t_opt *option);
 void				print_rec(t_entry *my_entry, t_stat *info, t_opt *option);
-
+*/
 /*
 ** Fonctions de gestions des listes doublements chainee.
 */
