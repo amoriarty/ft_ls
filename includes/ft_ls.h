@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 13:01:19 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/03 16:43:43 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/05 14:57:27 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void				print_total(t_dlist *list);
 */
 
 t_dlist				*new_list(void);
-t_dlist				*append(t_dlist *list, char *name);
+t_dlist				*append(t_dlist *list, char *name, char *path);
 t_dlist				*prepend(t_dlist *list, char *name);
 
 /*
