@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/02 11:18:11 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/05 17:23:26 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/05 19:06:03 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,27 +63,20 @@ void				print_time(t_time *info)
 	ft_putchar(' ');
 }
 
-void				print_long(t_dlist *list)
+void				print_long(t_entry *tmp, t_dlist *list)
 {
-	t_entry			*tmp;
 	t_time			*my_time;
 
 	my_time = NULL;
-	tmp = list->begin;
-	print_total(list);
-	while (tmp != NULL)
-	{
-		print_perm(tmp->info->st_mode);
-		recalibrage(len_nlink(list) - digitlen(tmp->info->st_nlink));
-		ft_putnbr(tmp->info->st_nlink);
-		ft_putchar(' ');
-		print_usr(tmp->info->st_uid, tmp->info->st_gid, list);
-		recalibrage(len_size(list) - digitlen(tmp->info->st_size));
-		ft_putnbr(tmp->info->st_size);
-		ft_putchar(' ');
-		my_time = time_info(&tmp->info->st_mtime, &my_time);
-		print_time(my_time);
-		ft_putendl(tmp->name);
-		tmp = tmp->next;
-	}
+	print_perm(tmp->info->st_mode);
+	recalibrage(len_nlink(list) - digitlen(tmp->info->st_nlink));
+	ft_putnbr(tmp->info->st_nlink);
+	ft_putchar(' ');
+	print_usr(tmp->info->st_uid, tmp->info->st_gid, list);
+	recalibrage(len_size(list) - digitlen(tmp->info->st_size));
+	ft_putnbr(tmp->info->st_size);
+	ft_putchar(' ');
+	my_time = time_info(&tmp->info->st_mtime, &my_time);
+	print_time(my_time);
+	ft_putendl(tmp->name);
 }

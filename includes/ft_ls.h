@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 13:01:19 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/05 17:21:42 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/05 19:06:34 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,9 @@ void				file_type(mode_t info);
 void				print_perm(mode_t info);
 void				print_usr(uid_t usr, gid_t gr, t_dlist *list);
 void				print_time(t_time *info);
-void				print_long(t_dlist *list);
+void				print_total(t_dlist *list);
+void				print_long(t_entry *tmp, t_dlist *list);
+void				print(t_dlist *list, t_opt *option);
 
 /*
 ** Fonctions de calcul de taille afin d'effecture le recalibrage
@@ -67,7 +69,6 @@ size_t				len_nlink(t_dlist *list);
 size_t				len_size(t_dlist *list);
 size_t				len_usr(t_dlist *list);
 size_t				len_grp(t_dlist *list);
-void				print_total(t_dlist *list);
 
 /*
 ** Fonctions de gestions des listes doublements chainee.

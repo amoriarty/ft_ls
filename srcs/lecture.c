@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/04 14:42:23 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/05 16:57:06 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/05 19:04:02 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,12 @@ int					lecture(char *path, t_opt *option)
 	while ((my_dirent = readdir(my_dir)))
 		list = append(list, my_dirent->d_name, path);
 	closedir(my_dir);
-	path_print(path, option);
-	print_long(list);
+	if (option->opt_l)
+	{
+		path_print(path, option);
+		print_total(list);
+	}
+	print(list, option);
 	if (option->opt_rec == TRUE)
 		recursive(list, option, path);
 	return (TRUE);
