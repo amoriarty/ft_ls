@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/02 11:18:11 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/03 15:03:33 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/05 17:23:26 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void			recalibrage(size_t max)
 
 void				print_perm(mode_t info)
 {
-	ft_putchar((S_ISDIR(info)) ? 'd' : '-');
+	file_type(info);
 	ft_putchar((info & S_IRUSR) ? 'r' : '-');
 	ft_putchar((info & S_IWUSR) ? 'w' : '-');
 	ft_putchar((info & S_IXUSR) ? 'x' : '-');

@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 13:01:19 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/05 14:57:27 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/05 17:21:42 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,11 @@ t_time				*time_info(time_t *clock, t_time **my_time);
 
 /*
 ** Fonctions d'affichage.
+** La fonction file type n'est pas dans le meme fichier mais il me parait
+** plus judicieux de l'ecrire ici.
 */
 
+void				file_type(mode_t info);
 void				print_perm(mode_t info);
 void				print_usr(uid_t usr, gid_t gr, t_dlist *list);
 void				print_time(t_time *info);

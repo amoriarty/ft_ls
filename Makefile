@@ -6,7 +6,7 @@
 #    By: alegent <alegent@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/26 18:51:25 by alegent           #+#    #+#              #
-#    Updated: 2014/12/03 11:14:58 by alegent          ###   ########.fr        #
+#    Updated: 2014/12/05 17:22:27 by alegent          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SRCS= srcs/main.c \
 	  srcs/lecture.c \
 	  srcs/ft_annex.c \
 	  srcs/list.c \
-	  srcs/recalibrage.c
+	  srcs/recalibrage.c \
+	  srcs/dev.c
 
 OBJT= main.o \
 	  option.o \
@@ -30,7 +31,8 @@ OBJT= main.o \
 	  lecture.o \
 	  ft_annex.o \
 	  list.o \
-	  recalibrage.o
+	  recalibrage.o \
+	  dev.o
 
 GCC= gcc -Wall -Wextra -Werror
 
