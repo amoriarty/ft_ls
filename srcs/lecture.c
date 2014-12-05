@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/04 14:42:23 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/05 19:04:02 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/05 19:25:32 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,14 @@ static void			recursive(t_dlist *list, t_opt *option, char *path)
 {
 	t_entry			*tmp;
 
-	tmp = list->begin;
+	tmp = (option->opt_r) ? list->end : list->begin;
 	while (tmp != NULL)
 	{
 		if (S_ISDIR(tmp->info->st_mode)
 				&& ft_strcmp(tmp->name, ".") != 0
 				&& ft_strcmp(tmp->name, "..") != 0)
 			lecture(ft_strjoin(path, tmp->name), option);
-		tmp = tmp->next;
+		tmp = (option->opt_r) ? tmp->prec : tmp->next;
 	}
 }
 
