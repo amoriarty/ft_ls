@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 12:59:53 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/03 14:46:48 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/05 16:26:01 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ struct							s_time
 typedef struct s_opt			t_opt;
 struct							s_opt
 {
+	unsigned int				m_path;
 	unsigned int				opt_l;
 	unsigned int				opt_rec;
 	unsigned int				opt_a;
