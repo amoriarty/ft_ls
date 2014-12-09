@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/02 11:18:11 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/05 19:06:03 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/09 10:35:57 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,19 +51,27 @@ void				print_usr(uid_t usr, gid_t gr, t_dlist *list)
 	ft_putchar(' ');
 }
 
-void				print_time(t_time *info)
+void				print_time(t_time *info, time_t *clock, time_t *current)
 {
 	ft_putstr(info->month);
 	ft_putchar(' ');
 	ft_putstr(info->day);
 	ft_putchar(' ');
-	ft_putstr(info->hour);
-	ft_putchar(':');
-	ft_putstr(info->minute);
+	if (is_early(clock, current) == TRUE)
+	{
+		ft_putstr(info->hour);
+		ft_putchar(':');
+		ft_putstr(info->minute);
+	}
+	else
+	{
+		ft_putchar(' ');
+		ft_putstr(info->year);
+	}
 	ft_putchar(' ');
 }
 
-void				print_long(t_entry *tmp, t_dlist *list)
+void				print_long(t_entry *tmp, t_dlist *list, time_t *clock)
 {
 	t_time			*my_time;
 
@@ -77,6 +85,6 @@ void				print_long(t_entry *tmp, t_dlist *list)
 	ft_putnbr(tmp->info->st_size);
 	ft_putchar(' ');
 	my_time = time_info(&tmp->info->st_mtime, &my_time);
-	print_time(my_time);
+	print_time(my_time, &tmp->info->st_mtime, clock);
 	ft_putendl(tmp->name);
 }

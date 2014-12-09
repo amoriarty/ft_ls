@@ -6,13 +6,13 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/05 18:56:11 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/05 19:14:24 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/09 10:03:59 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void				print(t_dlist *list, t_opt *option)
+void				print(t_dlist *list, t_opt *option, time_t *clock)
 {
 	t_entry			*tmp;
 
@@ -22,14 +22,14 @@ void				print(t_dlist *list, t_opt *option)
 		if (option->opt_a)
 		{
 			if (option->opt_l)
-				print_long(tmp, list);
+				print_long(tmp, list, clock);
 			else
 				ft_putendl(tmp->name);
 		}
 		else if (is_hidden(tmp->name) == FALSE)
 		{
 			if (option->opt_l)
-				print_long(tmp, list);
+				print_long(tmp, list, clock);
 			else
 				ft_putendl(tmp->name);
 		}

@@ -6,15 +6,15 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/04 14:42:23 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/05 19:25:32 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/09 10:09:34 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-static int			search(char *path)
+static int		search(char *path)
 {
-	int				i;
+	int			i;
 
 	i = 0;
 	while (path[i])
@@ -24,9 +24,9 @@ static int			search(char *path)
 	return (FALSE);
 }
 
-static void			path_print(char *path, t_opt *option)
+static void		path_print(char *path, t_opt *option)
 {
-	static int		i;
+	static int	i;
 
 	if (search(path) == TRUE)
 		path[ft_strlen(path) - 1] = '\0';
@@ -45,9 +45,9 @@ static void			path_print(char *path, t_opt *option)
 		path[ft_strlen(path)] = '/';
 }
 
-static void			recursive(t_dlist *list, t_opt *option, char *path)
+static void		recursive(t_dlist *list, t_opt *option, char *path, time_t *c)
 {
-	t_entry			*tmp;
+	t_entry		*tmp;
 
 	tmp = (option->opt_r) ? list->end : list->begin;
 	while (tmp != NULL)
@@ -55,16 +55,16 @@ static void			recursive(t_dlist *list, t_opt *option, char *path)
 		if (S_ISDIR(tmp->info->st_mode)
 				&& ft_strcmp(tmp->name, ".") != 0
 				&& ft_strcmp(tmp->name, "..") != 0)
-			lecture(ft_strjoin(path, tmp->name), option);
+			lecture(ft_strjoin(path, tmp->name), option, c);
 		tmp = (option->opt_r) ? tmp->prec : tmp->next;
 	}
 }
 
-int					lecture(char *path, t_opt *option)
+int				lecture(char *path, t_opt *option, time_t *clock)
 {
-	DIR				*my_dir;
-	t_dirent		*my_dirent;
-	t_dlist			*list;
+	DIR			*my_dir;
+	t_dirent	*my_dirent;
+	t_dlist		*list;
 
 	list = new_list();
 	if (search(path) == FALSE)
@@ -79,8 +79,8 @@ int					lecture(char *path, t_opt *option)
 		path_print(path, option);
 		print_total(list);
 	}
-	print(list, option);
+	print(list, option, clock);
 	if (option->opt_rec == TRUE)
-		recursive(list, option, path);
+		recursive(list, option, path, clock);
 	return (TRUE);
 }

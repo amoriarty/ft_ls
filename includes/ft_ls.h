@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 13:01:19 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/05 19:06:34 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/09 10:07:37 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int					manage_opt(t_opt *option, char **av);
 
 t_time				*init_time(t_time **my_time);
 t_time				*time_info(time_t *clock, t_time **my_time);
+int					is_early(time_t *clock, time_t *current);
 
 /*
 ** Fonctions d'affichage.
@@ -55,10 +56,10 @@ t_time				*time_info(time_t *clock, t_time **my_time);
 void				file_type(mode_t info);
 void				print_perm(mode_t info);
 void				print_usr(uid_t usr, gid_t gr, t_dlist *list);
-void				print_time(t_time *info);
+void				print_time(t_time *info, time_t *clock, time_t *current);
 void				print_total(t_dlist *list);
-void				print_long(t_entry *tmp, t_dlist *list);
-void				print(t_dlist *list, t_opt *option);
+void				print_long(t_entry *tmp, t_dlist *list, time_t *clock);
+void				print(t_dlist *list, t_opt *option, time_t *clock);
 
 /*
 ** Fonctions de calcul de taille afin d'effecture le recalibrage
@@ -82,7 +83,7 @@ t_dlist				*prepend(t_dlist *list, char *name);
 ** Fonction(s) de lecture du dossier.
 */
 
-int					lecture(char *dir_name, t_opt *option);
+int					lecture(char *dir_name, t_opt *option, time_t *clock);
 
 /*
 ** Fonctions annexes.

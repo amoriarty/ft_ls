@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/28 11:40:22 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/02 13:23:40 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/09 10:29:45 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,13 @@ t_time				*time_info(time_t *clock, t_time **my_time)
 	(*my_time)->minute = ft_strsub((*my_time)->complet, 14, 2);
 	(*my_time)->year = ft_strsub((*my_time)->complet, 20, 4);
 	return (*my_time);
+}
+
+int					is_early(time_t *clock, time_t *current)
+{
+	if ((*clock + 15778463) < *current)
+		return (FALSE);
+	if (*clock < *current)
+		return (TRUE);
+	return (FALSE);
 }
