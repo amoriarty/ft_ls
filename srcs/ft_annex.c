@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/02 11:15:01 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/11 10:52:13 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/11 18:36:04 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,11 @@ t_entry				*new_entry(void)
 			|| (new->info = (t_stat *)malloc(sizeof(t_stat))) == NULL)
 		return (NULL);
 	return (new);
+}
+
+void				putcolor(char *str, char *color)
+{
+	ft_putstr(color);
+	ft_putstr(str);
+	ft_putstr(CANCEL);
 }

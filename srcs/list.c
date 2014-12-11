@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/02 13:20:26 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/11 12:06:44 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/11 18:20:24 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ t_dlist				*list_tri(t_dlist *list, char *name, char *path)
 				if (tmp->next == NULL)
 					return (list = append(list, name, path));
 				return (list = (tmp->prec == NULL) ? prepend(list, name, path)
-					: tmp_tri(list, new, tmp, path));
+				: tmp_tri(list, new, tmp, path));
 			}
 			if (tmp->next)
 				tmp = tmp->next;

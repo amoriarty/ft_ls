@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 13:01:19 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/11 14:36:46 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/11 18:34:54 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,13 @@
 # define ERROR -1
 # define EOL '\n'
 # define OPT '-'
+# define RED "\033[31m"
+# define BLUE "\033[34m"
+# define CYAN "\033[1;36m"
+# define GREEN "\033[32m"
+# define YELLOW "\033[33m"
+# define CANCEL "\033[00m"
+# define BACKCOLOR "\033[43"
 
 /*
 ** Fonction d'affichage d'erreur.
@@ -95,5 +102,7 @@ int					lecture(char *dir_name, t_opt *option, time_t *clock);
 int					is_hidden(char *name);
 size_t				digitlen(int n);
 t_entry				*new_entry(void);
+void				putcolor(char *str, char *color);
+void				colorgestion(char *str, mode_t info);
 
 #endif
