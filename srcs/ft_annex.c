@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/02 11:15:01 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/03 09:19:40 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/11 10:52:13 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,14 @@ size_t				digitlen(int n)
 	}
 	res++;
 	return (res);
+}
+
+t_entry				*new_entry(void)
+{
+	t_entry			*new;
+
+	if ((new = (t_entry *)malloc(sizeof(t_entry))) == NULL
+			|| (new->info = (t_stat *)malloc(sizeof(t_stat))) == NULL)
+		return (NULL);
+	return (new);
 }

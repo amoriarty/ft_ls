@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/02 11:18:11 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/09 10:35:57 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/09 11:14:07 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,6 @@ void				print_long(t_entry *tmp, t_dlist *list, time_t *clock)
 	ft_putchar(' ');
 	my_time = time_info(&tmp->info->st_mtime, &my_time);
 	print_time(my_time, &tmp->info->st_mtime, clock);
+	free(my_time);
 	ft_putendl(tmp->name);
 }

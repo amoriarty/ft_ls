@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 12:59:53 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/05 16:26:01 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/09 14:18:34 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ struct							s_opt
 	unsigned int				opt_a;
 	unsigned int				opt_r;
 	unsigned int				opt_t;
-	unsigned int				opt_s;
 };
 
 /*
@@ -63,7 +62,6 @@ typedef struct s_entry			t_entry;
 struct							s_entry
 {
 	char						*name;
-	char						*path;
 	t_stat						*info;
 	t_entry						*next;
 	t_entry						*prec;

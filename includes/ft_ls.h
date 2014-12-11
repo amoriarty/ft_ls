@@ -6,12 +6,13 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 13:01:19 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/09 10:07:37 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/11 10:52:38 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LS_H
 # define FT_LS_H
+# include <stdio.h>
 # include <dirent.h>
 # include <sys/types.h>
 # include <sys/stat.h>
@@ -30,7 +31,8 @@
 ** Fonction d'affichage d'erreur.
 */
 
-void				ft_error(char *error, char *file);
+void				put_error(char *path);
+void				illegal_error(char *option);
 
 /*
 ** Fonction de gestions des options.
@@ -77,7 +79,8 @@ size_t				len_grp(t_dlist *list);
 
 t_dlist				*new_list(void);
 t_dlist				*append(t_dlist *list, char *name, char *path);
-t_dlist				*prepend(t_dlist *list, char *name);
+t_dlist				*prepend(t_dlist *list, char *name, char *path);
+t_dlist				*list_tri(t_dlist *list, char *name, char *path);
 
 /*
 ** Fonction(s) de lecture du dossier.
@@ -91,5 +94,6 @@ int					lecture(char *dir_name, t_opt *option, time_t *clock);
 
 int					is_hidden(char *name);
 size_t				digitlen(int n);
+t_entry				*new_entry(void);
 
 #endif

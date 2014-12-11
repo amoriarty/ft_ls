@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/02 13:20:26 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/05 14:57:50 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/11 10:53:08 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ t_dlist				*append(t_dlist *list, char *name, char *path)
 	return (list);
 }
 
-t_dlist				*prepend(t_dlist *list, char *name)
+t_dlist				*prepend(t_dlist *list, char *name, char *path)
 {
 	t_entry			*new;
 
@@ -61,7 +61,7 @@ t_dlist				*prepend(t_dlist *list, char *name)
 	if (list != NULL)
 	{
 		new->name = ft_strdup(name);
-		stat(name, new->info);
+		stat(ft_strjoin(path, name), new->info);
 		new->prec = NULL;
 		if (list->end == NULL)
 		{
@@ -78,4 +78,44 @@ t_dlist				*prepend(t_dlist *list, char *name)
 		list->lenght++;
 	}
 	return (list);
+}
+
+static t_dlist		*tmp_tri(t_dlist *list, t_entry *n, t_entry *t, char *path)
+{
+	stat(ft_strjoin(path, n->name), n->info);
+	t->prec->next = n;
+	t->next->prec = n;
+	n->prec = t->prec;
+	n->next = t;
+	list->lenght++;
+	return (list);
+}
+
+t_dlist				*list_tri(t_dlist *list, char *name, char *path)
+{
+	t_entry			*new;
+	t_entry			*tmp;
+
+	if ((new = new_entry()) == NULL)
+		return (NULL);
+	if (list != NULL && list->begin != NULL)
+	{
+		new->name = ft_strdup(name);
+		tmp = list->begin;
+		while (tmp)
+		{
+			if (ft_strcmp(tmp->name, name) >= 0)
+			{
+				if (tmp->next == NULL)
+					return (list = append(list, name, path));
+				list = (tmp->prec == NULL) ? prepend(list, name, path)
+					: tmp_tri(list, new, tmp, path);
+			}
+			if (tmp->next)
+				tmp = tmp->next;
+			else
+				return (list = append(list, name, path));
+		}
+	}
+	return (list->begin == NULL) ? (list = append(list, name, path)) : NULL;
 }

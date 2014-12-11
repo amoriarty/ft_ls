@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/03 10:01:17 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/03 14:20:51 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/09 17:27:32 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ void				print_total(t_dlist *list)
 	t_entry			*tmp;
 
 	size = 0;
+	if ((tmp = (t_entry *)malloc(sizeof(t_entry))) == NULL)
+		return ;
 	tmp = list->begin;
 	while (tmp != NULL)
 	{
