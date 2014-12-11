@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/02 11:18:11 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/09 11:14:07 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/11 12:03:58 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void			recalibrage(size_t max)
 	size_t			len;
 
 	len = 0;
-	while (len++ < max)
+	while (len++ <= max)
 		ft_putchar(' ');
 }
 
@@ -48,7 +48,6 @@ void				print_usr(uid_t usr, gid_t gr, t_dlist *list)
 	ft_putchar(' ');
 	ft_putstr(my_grp->gr_name);
 	recalibrage(len_grp(list) - ft_strlen(my_grp->gr_name));
-	ft_putchar(' ');
 }
 
 void				print_time(t_time *info, time_t *clock, time_t *current)
