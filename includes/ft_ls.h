@@ -6,13 +6,14 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/16 09:16:50 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/28 15:07:55 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/28 15:45:30 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LS_H
 # define FT_LS_H
 # include <unistd.h>
+# include <stdio.h>
 # include <stdlib.h>
 # include <dirent.h>
 # include <sys/types.h>

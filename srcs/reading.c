@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/17 10:05:19 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/24 11:02:01 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/28 15:47:08 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,9 @@ int					reading(t_opt *opt, char *dir_name)
 			recursive(list, opt, dir_name);
 		return (SUCCESS);
 	}
+	ft_putstr("ft_ls: ");
+	ft_putstr(dir_name);
+	ft_putstr(": ");
+	perror("");
 	return (FAILURE);
 }
