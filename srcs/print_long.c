@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/17 16:31:44 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/31 13:17:51 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/31 13:27:01 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void				print_long(t_node *list, t_opt *opt)
 	t_node			*tmp;
 
 	tmp = list;
+	print_total(list);
 	while (tmp)
 	{
 		if (opt->a == FALSE)
