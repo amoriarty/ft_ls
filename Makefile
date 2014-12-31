@@ -6,7 +6,7 @@
 #    By: alegent <alegent@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/26 18:51:25 by alegent           #+#    #+#              #
-#    Updated: 2014/12/31 13:25:51 by alegent          ###   ########.fr        #
+#    Updated: 2014/12/31 15:26:02 by alegent          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,8 @@ SRCS= srcs/main.c \
 	  srcs/putcolor.c \
 	  srcs/print_color.c \
 	  srcs/print_link.c \
-	  srcs/print_total.c
+	  srcs/print_total.c \
+	  srcs/print_major.c
 
 OBJT= main.o \
 	  current_dir.o \
@@ -66,7 +67,8 @@ OBJT= main.o \
 	  putcolor.o \
 	  print_color.o \
 	  print_link.o \
-	  print_total.o
+	  print_total.o \
+	  print_major.o
 
 GCC= gcc -Wall -Wextra -Werror
 

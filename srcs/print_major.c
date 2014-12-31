@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_len.c                                         :+:      :+:    :+:   */
+/*   print_major.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/17 17:19:21 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/31 15:28:37 by alegent          ###   ########.fr       */
+/*   Created: 2014/12/31 15:22:10 by alegent           #+#    #+#             */
+/*   Updated: 2014/12/31 15:25:06 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-t_len				*init_len(void)
+void				print_major(t_stat *info, t_len *len)
 {
-	t_len			*new;
-
-	if ((new = (t_len *)malloc(sizeof(t_len))) == NULL)
-		return (NULL);
-	new->nlink = 0;
-	new->lsize = 0;
-	new->usr = 0;
-	new->grp = 0;
-	new->lmajor = 0;
-	new->lminor = 0;
-	return (new);
+	calibration(len->lmajor - ft_digitlen(major(info->st_rdev)));
+	ft_putnbr(major(info->st_rdev));
+	ft_putstr(", ");
+	calibration(len->lminor - ft_digitlen(minor(info->st_rdev)));
+	ft_putnbr(minor(info->st_rdev));
 }

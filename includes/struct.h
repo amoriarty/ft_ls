@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/16 09:19:47 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/31 12:38:18 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/31 15:18:24 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ struct							s_len
 	size_t						lsize;
 	size_t						usr;
 	size_t						grp;
+	size_t						lmajor;
+	size_t						lminor;
 };
 
 #endif

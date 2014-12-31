@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/16 09:16:50 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/31 13:26:29 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/31 15:25:26 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,6 @@ void			putcolor(char *str, char *color);
 void			print_color(char *str, t_stat *info);
 void			print_link(char *path);
 void			print_total(t_node *list);
+void			print_major(t_stat *info, t_len *len);
 
 #endif

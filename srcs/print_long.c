@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/17 16:31:44 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/31 13:27:01 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/31 15:29:30 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,13 @@ static void			to_print(t_node *list, char *name, char *path, t_stat *info)
 	ft_putnbr(info->st_nlink);
 	ft_putchar(' ');
 	print_usr(info, len);
-	calibration(len->lsize - ft_digitlen(info->st_size));
-	ft_putnbr(info->st_size);
+	if (ft_strcmp(path, "/dev/") == 0)
+		print_major(info, len);
+	else
+	{
+		calibration(len->lsize - ft_digitlen(info->st_size));
+		ft_putnbr(info->st_size);
+	}
 	ft_putchar(' ');
 	print_time(info);
 	print_color(name, info);

@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/17 17:24:24 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/18 15:13:14 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/31 15:21:33 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,10 @@ t_len				*len_calcul(t_node *list)
 			? usr(tmp->info) : new->usr;
 		new->grp = (new->grp < grp(tmp->info))
 			? grp(tmp->info) : new->grp;
+		new->lmajor = (new->lmajor < ft_digitlen(major(tmp->info->st_rdev)))
+			? ft_digitlen(major(tmp->info->st_rdev)) : new->lmajor;
+		new->lminor = (new->lminor < ft_digitlen(minor(tmp->info->st_rdev)))
+			? ft_digitlen(minor(tmp->info->st_rdev)) : new->lminor;
 		tmp = tmp->next;
 	}
 	return (new);
