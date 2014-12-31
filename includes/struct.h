@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/16 09:19:47 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/17 17:18:51 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/31 12:38:18 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_node			t_node;
 struct							s_node
 {
 	char						*name;
+	char						*path;
 	t_stat						*info;
 	t_node						*next;
 };

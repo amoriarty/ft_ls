@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/16 09:16:50 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/28 15:45:30 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/31 13:04:27 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 # define ERROR -1
 # define SUCCESS 1
 # define FAILURE 0
+# define BUFF_SIZE 32
 # define EOL '\n'
 # define OPT '-'
 # define CYAN "\033[1;36m"
@@ -60,6 +61,7 @@ t_len			*len_calcul(t_node *list);
 t_node			*sort_ascii(t_node *list);
 t_node			*sort_time(t_node *list);
 void			putcolor(char *str, char *color);
-void			print_color(char *str, mode_t info);
+void			print_color(char *str, t_stat *info);
+void			print_link(char *path);
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/17 16:31:44 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/28 13:59:56 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/31 13:17:51 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-static void			to_print(t_node *list, char *name, t_stat *info)
+static void			to_print(t_node *list, char *name, char *path, t_stat *info)
 {
 	t_len			*len;
 
@@ -26,7 +26,10 @@ static void			to_print(t_node *list, char *name, t_stat *info)
 	ft_putnbr(info->st_size);
 	ft_putchar(' ');
 	print_time(info);
-	print_color(name, info->st_mode);
+	print_color(name, info);
+	if (S_ISLNK(info->st_mode))
+		print_link(ft_strjoin(path, name));
+	ft_putchar(EOL);
 }
 
 void				print_long(t_node *list, t_opt *opt)
@@ -39,10 +42,10 @@ void				print_long(t_node *list, t_opt *opt)
 		if (opt->a == FALSE)
 		{
 			if (is_hidden(tmp->name) == FALSE)
-				to_print(list, tmp->name, tmp->info);
+				to_print(list, tmp->name, tmp->path, tmp->info);
 		}
 		else
-			to_print(list, tmp->name, tmp->info);
+			to_print(list, tmp->name, tmp->path, tmp->info);
 		tmp = tmp->next;
 	}
 }
