@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/17 10:05:19 by alegent           #+#    #+#             */
-/*   Updated: 2015/01/04 15:17:49 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/04 15:37:34 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ int					reading(t_opt *opt, char *dir_name)
 		while ((p_dirent = readdir(p_dir)))
 			list = insert_node(list, p_dirent->d_name, dir_name, opt);
 		closedir(p_dir);
-//		list = sort_ascii(list);
 		print(list, opt);
 		if (opt->rec)
 			recursive(list, opt, dir_name);
