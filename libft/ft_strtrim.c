@@ -6,11 +6,10 @@
 /*   By: alegent <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 16:56:19 by alegent           #+#    #+#             */
-/*   Updated: 2014/11/17 16:51:48 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/03 15:50:23 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 static int		ft_isblank(char c)

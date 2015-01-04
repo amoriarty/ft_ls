@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_digitlen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alegent <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 18:19:47 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/30 11:26:29 by alegent          ###   ########.fr       */
+/*   Created: 2014/12/16 09:25:41 by alegent           #+#    #+#             */
+/*   Updated: 2014/12/30 11:14:16 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_isalpha(int c)
+size_t					ft_digitlen(int n)
 {
-	return (((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')) ? TRUE : FALSE);
+	size_t				res;
+
+	res = 0;
+	if (n > 9)
+	{
+		res++;
+		return (res + ft_digitlen(n / 10));
+	}
+	res++;
+	return (res);
 }

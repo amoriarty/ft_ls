@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alegent <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 18:19:47 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/30 11:26:29 by alegent          ###   ########.fr       */
+/*   Created: 2014/11/13 11:29:19 by alegent           #+#    #+#             */
+/*   Updated: 2014/11/26 17:56:03 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# define EOL '\n'
+# define TRUE 1
+# define FALSE 0
+# define ERROR -1
+# define BUFF_SIZE 1
 
-int			ft_isalpha(int c)
-{
-	return (((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')) ? TRUE : FALSE);
-}
+int		get_next_line(const int fd, char **line);
+
+#endif

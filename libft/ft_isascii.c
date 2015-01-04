@@ -6,7 +6,7 @@
 /*   By: alegent <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 11:50:24 by alegent           #+#    #+#             */
-/*   Updated: 2014/11/04 11:54:43 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/30 11:27:47 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 int			ft_isascii(int c)
 {
-	if (c >= 0 && c < 128)
-		return (TRUE);
-	return (FALSE);
+	return ((c >= 0 && c < 128) ? TRUE : FALSE);
 }

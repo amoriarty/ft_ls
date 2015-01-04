@@ -6,11 +6,10 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/26 12:57:28 by alegent           #+#    #+#             */
-/*   Updated: 2014/11/26 13:11:32 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/03 15:46:02 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t))

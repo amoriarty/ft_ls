@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_putcolor.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alegent <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 18:19:47 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/30 11:26:29 by alegent          ###   ########.fr       */
+/*   Created: 2014/12/30 12:31:24 by alegent           #+#    #+#             */
+/*   Updated: 2014/12/30 12:33:08 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_isalpha(int c)
+void				ft_putcolor(char *str, char *color)
 {
-	return (((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')) ? TRUE : FALSE);
+	ft_putstr(color);
+	ft_putstr(str);
+	ft_putstr(CANCEL);
 }

@@ -3,53 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alegent <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: rdestreb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/04 14:49:05 by alegent           #+#    #+#             */
-/*   Updated: 2014/11/19 12:42:50 by alegent          ###   ########.fr       */
+/*   Created: 2014/11/05 13:41:10 by rdestreb          #+#    #+#             */
+/*   Updated: 2015/01/03 16:47:29 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-static int	ft_cmp(const char *s1, const char *s2)
+char	*ft_strstr(const char *s1, const char *s2)
 {
-	int		i;
+	int	i;
+	int	j;
 
-	i = 0;
-	while (s2[i] != '\0')
+	i = -1;
+	if (!(s2[0]))
+		return ((char*)s1);
+	while (s1[++i])
 	{
-		if (s1[i] != s2[i])
-			return (FALSE);
-		i++;
-	}
-	return (TRUE);
-}
-
-char		*ft_strstr(const char *s1, const char *s2)
-{
-	int		i;
-	char	*dst;
-
-	i = 0;
-	dst = (char *)malloc(sizeof(char) * ft_strlen(s1));
-	if (*s2 == 0)
-		return ((char *)s1);
-	while (*s1)
-	{
-		if (ft_cmp(s1, s2) == TRUE)
+		j = 0;
+		if (s1[i] == s2[j])
 		{
-			while (*s1 != '\0')
+			while (s1[i + j] == s2[j] && s1[i + j] && s2[j])
 			{
-				dst[i] = *s1;
-				s1++;
-				i++;
+				j++;
+				if (!(s2[j]))
+					return ((char*)s1 + i);
 			}
-			dst[i] = '\0';
-			return (dst);
 		}
-		s1++;
 	}
 	return (NULL);
 }

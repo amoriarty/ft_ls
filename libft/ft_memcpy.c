@@ -6,11 +6,10 @@
 /*   By: alegent <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 18:50:38 by alegent           #+#    #+#             */
-/*   Updated: 2014/11/17 16:33:19 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/03 15:46:42 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 void		*ft_memcpy(void *dst, const void *src, size_t n)

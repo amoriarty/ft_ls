@@ -6,7 +6,7 @@
 /*   By: alegent <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 18:30:11 by alegent           #+#    #+#             */
-/*   Updated: 2014/11/03 18:32:06 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/30 11:29:38 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,5 @@
 
 int			ft_isdigit(int c)
 {
-	if (c >= '0' && c <= '9')
-		return (TRUE);
-	else
-		return (FALSE);
+	return ((c >= '0' && c <= '9') ? TRUE : FALSE);
 }

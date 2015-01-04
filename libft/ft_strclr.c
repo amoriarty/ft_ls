@@ -6,12 +6,11 @@
 /*   By: alegent <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 11:32:48 by alegent           #+#    #+#             */
-/*   Updated: 2014/11/17 16:38:30 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/03 15:48:23 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 void		ft_strclr(char *s)
 {

@@ -6,11 +6,10 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/13 13:57:41 by alegent           #+#    #+#             */
-/*   Updated: 2014/11/17 16:48:28 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/03 15:49:31 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char		*ft_strncat(char *s1, const char *s2, size_t n)

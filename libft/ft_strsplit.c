@@ -6,11 +6,10 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 16:01:39 by alegent           #+#    #+#             */
-/*   Updated: 2014/11/14 18:42:25 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/03 15:49:59 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 static int		count_words(const char *s, char c)

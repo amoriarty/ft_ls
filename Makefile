@@ -6,7 +6,7 @@
 #    By: alegent <alegent@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/26 18:51:25 by alegent           #+#    #+#              #
-#    Updated: 2014/12/31 15:26:02 by alegent          ###   ########.fr        #
+#    Updated: 2015/01/04 12:17:30 by alegent          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,17 +75,17 @@ GCC= gcc -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME):
-	make -C libft/ fclean
-	make -C libft/
-	make -C libft/ clean
-	$(GCC) -c $(SRCS) -I libft/includes -I includes
-	$(GCC) $(OBJT) -I libft/includes -I includes -L libft/ -lft -o $(NAME)
+	@make -C libft/ fclean
+	@make -C libft/
+	@make -C libft/ clean
+	@$(GCC) -c $(SRCS) -I libft/includes -I includes
+	@$(GCC) $(OBJT) -I libft/includes -I includes -L libft/ -lft -o $(NAME)
 
 clean:
-	rm -f $(OBJT)
+	@rm -f $(OBJT)
 
 fclean:
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean clean $(NAME)
 

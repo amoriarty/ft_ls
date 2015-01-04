@@ -6,11 +6,10 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/25 19:56:11 by alegent           #+#    #+#             */
-/*   Updated: 2014/11/26 12:32:49 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/03 15:46:18 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 t_list			*ft_lstnew(void *content, size_t content_size)

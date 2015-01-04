@@ -6,11 +6,10 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/17 11:01:40 by alegent           #+#    #+#             */
-/*   Updated: 2014/11/17 16:47:03 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/03 15:49:13 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 size_t			ft_strlcat(char *dst, const char *src, size_t size)

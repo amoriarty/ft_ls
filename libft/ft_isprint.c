@@ -6,7 +6,7 @@
 /*   By: alegent <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 11:58:24 by alegent           #+#    #+#             */
-/*   Updated: 2014/11/04 11:59:32 by alegent          ###   ########.fr       */
+/*   Updated: 2014/12/30 11:31:02 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 int			ft_isprint(int c)
 {
-	if (c > 31 && c < 127)
-		return (TRUE);
-	return (FALSE);
+	return ((c > 31 && c < 127) ? TRUE : FALSE);
 }
