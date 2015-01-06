@@ -6,7 +6,7 @@
 #    By: alegent <alegent@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/26 18:51:25 by alegent           #+#    #+#              #
-#    Updated: 2015/01/06 14:28:46 by alegent          ###   ########.fr        #
+#    Updated: 2015/01/06 14:32:17 by alegent          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,6 @@ SRCS= srcs/main.c \
 	  srcs/len_calcul.c \
 	  srcs/init_len.c \
 	  srcs/sort_ascii.c \
-	  srcs/sort_time.c \
 	  srcs/add_first.c \
 	  srcs/putcolor.c \
 	  srcs/print_color.c \
@@ -64,7 +63,6 @@ OBJT= main.o \
 	  len_calcul.o \
 	  init_len.o \
 	  sort_ascii.o \
-	  sort_time.o \
 	  add_first.o \
 	  putcolor.o \
 	  print_color.o \
