@@ -5,35 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/18 16:54:19 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/18 17:03:16 by alegent          ###   ########.fr       */
+/*   Created: 2015/01/06 14:28:23 by alegent           #+#    #+#             */
+/*   Updated: 2015/01/06 14:28:35 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-t_node				*sort_ascii(t_node *list)
+t_node				*sort_ascii(t_node *list, t_node *new)
 {
+	int				yes;
+	t_node			*prec;
 	t_node			*tmp;
-	t_node			*tmp2;
-	t_node			*res;
 
-	res = list;
-	while (list->next)
+	yes = FALSE;
+	tmp = list;
+	prec = NULL;
+	if (!list)
+		return (new);
+	if (tmp)
 	{
-		if (ft_strcmp(list->name, list->next->name) > 1)
+		while (tmp && ft_strcmp(tmp->name, new->name) <= 0)
 		{
-			tmp = res;
-			while (ft_strcmp(tmp->next->name, list->next->name) <= 0)
-				tmp = tmp->next;
-			tmp2 = list->next;
-			list->next = list->next->next;
-			tmp2->next = tmp->next;
-			tmp->next = tmp2;
-			if (list->next == NULL)
-				return (res);
+			yes = TRUE;
+			prec = tmp;
+			tmp = tmp->next;
 		}
-		list = list->next;
+		if (prec)
+			prec->next = new;
+		new->next = tmp;
+		if (yes)
+			return (list);
+		return (new);
 	}
-	return (res);
+	return (list);
 }
