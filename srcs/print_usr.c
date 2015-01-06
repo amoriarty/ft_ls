@@ -6,11 +6,17 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/17 17:05:51 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/18 15:31:24 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/06 14:49:25 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
+
+static void			strname(char *str, size_t len)
+{
+	ft_putstr(str);
+	calibration(len - ft_strlen(str));
+}
 
 void				print_usr(t_stat *info, t_len *len)
 {
@@ -20,20 +26,15 @@ void				print_usr(t_stat *info, t_len *len)
 	p_passwd = getpwuid(info->st_uid);
 	p_grp = getgrgid(info->st_gid);
 	if (p_passwd != NULL)
-	{
-		ft_putstr(p_passwd->pw_name);
-		calibration(len->usr - ft_strlen(p_passwd->pw_name));
-	}
+		strname(p_passwd->pw_name, len->usr);
 	else
 	{
 		ft_putnbr(info->st_uid);
 		calibration(len->usr - ft_digitlen(info->st_uid));
 	}
+	ft_putchar(' ');
 	if (p_grp != NULL)
-	{
-		ft_putstr(p_grp->gr_name);
-		calibration(len->grp - ft_strlen(p_grp->gr_name));
-	}
+		strname(p_grp->gr_name, len->grp);
 	else
 	{
 		ft_putnbr(info->st_gid);
