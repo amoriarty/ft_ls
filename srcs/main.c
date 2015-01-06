@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/16 09:21:27 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/28 15:30:52 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/06 13:54:41 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,22 +38,24 @@ static void			get_read(int ac, char **av)
 	int				x;
 	t_opt			*opt;
 	t_node			*list;
+	t_node			*new;
 
 	x = 1;
 	opt = manage_opt(av);
 	while (x < ac)
 	{
 		if (ft_strchr(av[x], OPT) == NULL)
-			list = add_node(list, av[x], av[x]);
+		{
+			new = new_node(av[x], av[x]);
+			list = new_sort(list, new);
+		}
 		x++;
 	}
 	if (list != NULL)
-	{
-		list = sort_ascii(list);
 		readall(list, opt);
-	}
 	else
 		reading(opt, ".");
+	free_node(list);
 }
 
 int					main(int ac, char **av)

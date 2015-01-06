@@ -6,7 +6,7 @@
 #    By: alegent <alegent@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/26 18:51:25 by alegent           #+#    #+#              #
-#    Updated: 2015/01/04 15:17:21 by alegent          ###   ########.fr        #
+#    Updated: 2015/01/06 13:47:54 by alegent          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,9 @@ SRCS= srcs/main.c \
 	  srcs/print_link.c \
 	  srcs/print_total.c \
 	  srcs/print_major.c \
-	  srcs/insert_node.c
+	  srcs/insert_node.c \
+	  srcs/free_node.c \
+	  srcs/new_sort.c \
 
 OBJT= main.o \
 	  current_dir.o \
@@ -70,7 +72,9 @@ OBJT= main.o \
 	  print_link.o \
 	  print_total.o \
 	  print_major.o \
-	  insert_node.o
+	  insert_node.o \
+	  free_node.o \
+	  new_sort.o
 
 GCC= gcc -Wall -Wextra -Werror
 

@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/16 09:16:50 by alegent           #+#    #+#             */
-/*   Updated: 2015/01/04 15:17:03 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/06 13:54:57 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,7 @@ void			print_link(char *path);
 void			print_total(t_node *list);
 void			print_major(t_stat *info, t_len *len);
 t_node			*insert_node(t_node *list, char *name, char *path, t_opt *opt);
+void			free_node(t_node *list);
+t_node			*new_sort(t_node *list, t_node *new);
 
 #endif
