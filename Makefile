@@ -6,7 +6,7 @@
 #    By: alegent <alegent@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/26 18:51:25 by alegent           #+#    #+#              #
-#    Updated: 2015/01/06 15:06:04 by alegent          ###   ########.fr        #
+#    Updated: 2015/01/06 16:27:12 by alegent          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,6 @@ SRCS= srcs/main.c \
 	  srcs/calibration.c \
 	  srcs/len_calcul.c \
 	  srcs/init_len.c \
-	  srcs/sort_ascii.c \
 	  srcs/add_first.c \
 	  srcs/putcolor.c \
 	  srcs/print_color.c \
@@ -40,7 +39,6 @@ SRCS= srcs/main.c \
 	  srcs/print_total.c \
 	  srcs/print_major.c \
 	  srcs/insert_node.c \
-	  srcs/free_node.c \
 
 OBJT= main.o \
 	  current_dir.o \
@@ -62,7 +60,6 @@ OBJT= main.o \
 	  calibration.o \
 	  len_calcul.o \
 	  init_len.o \
-	  sort_ascii.o \
 	  add_first.o \
 	  putcolor.o \
 	  print_color.o \
@@ -70,7 +67,6 @@ OBJT= main.o \
 	  print_total.o \
 	  print_major.o \
 	  insert_node.o \
-	  free_node.o \
 
 GCC= gcc -Wall -Wextra -Werror
 

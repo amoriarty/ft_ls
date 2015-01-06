@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/17 10:05:19 by alegent           #+#    #+#             */
-/*   Updated: 2015/01/06 11:57:52 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/06 16:26:32 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,11 @@ int					reading(t_opt *opt, char *dir_name)
 	if ((p_dir = opendir(dir_name)))
 	{
 		while ((p_dirent = readdir(p_dir)))
-			list = insert_node(list, p_dirent->d_name, dir_name, opt);
+			list = insert_node(list, new_node(p_dirent->d_name, dir_name), opt);
 		closedir(p_dir);
 		print(list, opt);
 		if (opt->rec)
 			recursive(list, opt, dir_name);
-		free_node(list);
 		return (SUCCESS);
 	}
 	ft_putstr("ft_ls: ");
