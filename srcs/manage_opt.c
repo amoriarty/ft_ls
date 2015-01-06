@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/17 09:48:28 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/28 16:13:52 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/06 16:49:23 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,21 @@
 
 static void			illegal(char *av)
 {
-	if (ft_strchr(av, 'l') == NULL && ft_strchr(av, 'R') == NULL
-			&& ft_strchr(av, 'r') == NULL && ft_strchr(av, 'a') == NULL
-			&& ft_strchr(av, 't') == NULL)
+	int				i;
+
+	i = 0;
+	while (i <= 300)
 	{
-		ft_putstr("ft_ls : illegal option -- ");
-		ft_putendl(ft_strchr(av, OPT) + 1);
-		ft_putendl("usage: ft_ls [-Ralrt] [file ...]");
-		exit(EXIT_FAILURE);
+		if (ft_strchr(av, i) && i != 'l' && i != 'r' && i != 'R' && i != 'a'
+				&& i != 't' && ft_isalnum(i))
+		{
+			ft_putstr("ft_ls: illegal option -- ");
+			ft_putchar(i);
+			ft_putchar(EOL);
+			ft_putendl("usage: ft_ls [-Ralrt] [file ...]");
+			exit(EXIT_FAILURE);
+		}
+		i++;
 	}
 }
 
@@ -34,7 +41,7 @@ t_opt				*manage_opt(char **av)
 	opt = init_opt();
 	while (av[i] && ft_strchr(av[i], OPT))
 	{
-		if (ft_strchr(av[i], OPT))
+		if (ft_strchr(av[i], OPT) && av[i][1])
 		{
 			opt->l = (ft_strchr(av[i], 'l')) ? TRUE : opt->l;
 			opt->rec = (ft_strchr(av[i], 'R')) ? TRUE : opt->rec;
