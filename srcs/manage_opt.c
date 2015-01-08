@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/17 09:48:28 by alegent           #+#    #+#             */
-/*   Updated: 2015/01/06 16:49:23 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/08 13:51:42 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ static void			illegal(char *av)
 		if (ft_strchr(av, i) && i != 'l' && i != 'r' && i != 'R' && i != 'a'
 				&& i != 't' && ft_isalnum(i))
 		{
-			ft_putstr("ft_ls: illegal option -- ");
-			ft_putchar(i);
-			ft_putchar(EOL);
-			ft_putendl("usage: ft_ls [-Ralrt] [file ...]");
+			ft_putstr_fd("ft_ls: illegal option -- ", 2);
+			ft_putchar_fd(i, 2);
+			ft_putchar_fd(EOL, 2);
+			ft_putendl_fd("usage: ft_ls [-Ralrt] [file ...]", 2);
 			exit(EXIT_FAILURE);
 		}
 		i++;

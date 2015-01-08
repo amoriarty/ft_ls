@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/16 09:21:27 by alegent           #+#    #+#             */
-/*   Updated: 2015/01/08 12:47:24 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/08 14:02:08 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,10 @@ static t_node		*list_reg(t_node *list, t_opt *opt)
 		tmp = tmp->next;
 	}
 	if (reg)
+	{
 		print_long(reg, opt);
-	ft_putchar(EOL);
+		ft_putchar(EOL);
+	}
 	return (list);
 }
 
@@ -55,7 +57,8 @@ static void			readall(t_node *list, t_opt *opt)
 			ft_putendl(":");
 		}
 		reading(opt, tmp->name);
-		ft_putchar(EOL);
+		if (tmp->next)
+			ft_putchar(EOL);
 		tmp = tmp->next;
 	}
 }

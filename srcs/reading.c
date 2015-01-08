@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/17 10:05:19 by alegent           #+#    #+#             */
-/*   Updated: 2015/01/08 12:36:50 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/08 13:51:11 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,9 @@ int					reading(t_opt *opt, char *dir_name)
 	}
 	if (is_reg(dir_name) == FAILURE)
 	{
-		ft_putstr("ft_ls: ");
-		ft_putstr(dir_name);
-		ft_putstr(": ");
+		ft_putstr_fd("ft_ls: ", 2);
+		ft_putstr_fd(dir_name, 2);
+		ft_putstr_fd(": ", 2);
 		perror("");
 	}
 	else
