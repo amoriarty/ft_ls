@@ -6,29 +6,19 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/17 10:05:19 by alegent           #+#    #+#             */
-/*   Updated: 2015/01/08 11:36:18 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/08 12:36:50 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-static int			is_reg(t_opt *opt, char *dir_name)
+static int			is_reg(char *dir_name)
 {
 	t_stat			info;
-	t_node			*new;
 
 	lstat(dir_name, &info);
 	if (S_ISREG(info.st_mode))
-	{
-		if (!opt->l)
-			ft_putendl(dir_name);
-		else
-		{
-			new = new_node(dir_name, ".");
-			print_long(new, opt);
-		}
 		return (SUCCESS);
-	}
 	return (FAILURE);
 }
 
@@ -70,7 +60,7 @@ int					reading(t_opt *opt, char *dir_name)
 			recursive(list, opt, dir_name);
 		return (SUCCESS);
 	}
-	if (is_reg(opt, dir_name) == FAILURE)
+	if (is_reg(dir_name) == FAILURE)
 	{
 		ft_putstr("ft_ls: ");
 		ft_putstr(dir_name);

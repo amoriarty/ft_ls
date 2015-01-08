@@ -6,11 +6,37 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/16 09:21:27 by alegent           #+#    #+#             */
-/*   Updated: 2015/01/08 11:22:13 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/08 12:39:45 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
+
+static t_node			*list_reg(t_node *list, t_opt *opt)
+{
+	t_node			*tmp;
+	t_node			*prec;
+	t_node			*new;
+	t_node			*reg;
+
+	tmp = list;
+	prec = list;
+	reg = NULL;
+	while (tmp)
+	{
+		if (S_ISREG(tmp->info->st_mode))
+		{
+			new = new_node(tmp->name, tmp->path);
+			reg = insert_node(reg, new, opt);
+			prec->next = tmp->next;
+		}
+		prec = prec->next;
+		tmp = tmp->next;
+	}
+	if (reg)
+		print_long(reg, opt);
+	return (list);
+}
 
 static void			readall(t_node *list, t_opt *opt)
 {
@@ -22,7 +48,7 @@ static void			readall(t_node *list, t_opt *opt)
 	while (tmp)
 	{
 		yes = (tmp->next) ? TRUE : yes;
-		if (yes == TRUE && !(S_ISREG(tmp->info->st_mode)))
+		if (yes == TRUE && (S_ISDIR(tmp->info->st_mode)))
 		{
 			ft_putstr(tmp->name);
 			ft_putendl(":");
@@ -52,7 +78,10 @@ static void			get_read(int ac, char **av)
 		x++;
 	}
 	if (list != NULL)
+	{
+		list = list_reg(list, opt);
 		readall(list, opt);
+	}
 	else
 		reading(opt, ".");
 }
