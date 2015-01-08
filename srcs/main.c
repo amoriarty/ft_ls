@@ -6,13 +6,13 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/16 09:21:27 by alegent           #+#    #+#             */
-/*   Updated: 2015/01/08 12:39:45 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/08 12:47:24 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-static t_node			*list_reg(t_node *list, t_opt *opt)
+static t_node		*list_reg(t_node *list, t_opt *opt)
 {
 	t_node			*tmp;
 	t_node			*prec;
@@ -35,6 +35,7 @@ static t_node			*list_reg(t_node *list, t_opt *opt)
 	}
 	if (reg)
 		print_long(reg, opt);
+	ft_putchar(EOL);
 	return (list);
 }
 
@@ -48,7 +49,7 @@ static void			readall(t_node *list, t_opt *opt)
 	while (tmp)
 	{
 		yes = (tmp->next) ? TRUE : yes;
-		if (yes == TRUE && (S_ISDIR(tmp->info->st_mode)))
+		if (yes == TRUE && !(S_ISREG(tmp->info->st_mode)))
 		{
 			ft_putstr(tmp->name);
 			ft_putendl(":");
