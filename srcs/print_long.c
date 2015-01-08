@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/17 16:31:44 by alegent           #+#    #+#             */
-/*   Updated: 2015/01/06 14:40:35 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/08 11:28:14 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,17 @@ static void			to_print(t_node *list, char *name, char *path, t_stat *info)
 void				print_long(t_node *list, t_opt *opt)
 {
 	t_node			*tmp;
+	t_stat			info;
 
 	tmp = list;
-	print_total(list);
+	lstat(list->name, &info);
+	if (S_ISDIR(info.st_mode))
+		print_total(list);
 	while (tmp)
 	{
 		if (opt->a == FALSE)
 		{
-			if (is_hidden(tmp->name) == FALSE)
+			if (is_hidden(tmp->name) == FALSE || S_ISREG(info.st_mode))
 				to_print(list, tmp->name, tmp->path, tmp->info);
 		}
 		else

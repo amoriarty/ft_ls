@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/16 09:21:27 by alegent           #+#    #+#             */
-/*   Updated: 2015/01/06 16:38:32 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/08 11:22:13 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void			readall(t_node *list, t_opt *opt)
 	while (tmp)
 	{
 		yes = (tmp->next) ? TRUE : yes;
-		if (yes == TRUE)
+		if (yes == TRUE && !(S_ISREG(tmp->info->st_mode)))
 		{
 			ft_putstr(tmp->name);
 			ft_putendl(":");
@@ -46,7 +46,7 @@ static void			get_read(int ac, char **av)
 	{
 		if (ft_strchr(av[x], OPT) == NULL || (av[x][0] == OPT && !av[x][1]))
 		{
-			new = new_node(av[x], av[x]);
+			new = new_node(av[x], ".");
 			list = insert_node(list, new, init_opt());
 		}
 		x++;
