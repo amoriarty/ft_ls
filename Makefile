@@ -6,7 +6,7 @@
 #    By: alegent <alegent@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/26 18:51:25 by alegent           #+#    #+#              #
-#    Updated: 2015/01/06 16:27:12 by alegent          ###   ########.fr        #
+#    Updated: 2015/01/09 08:21:59 by alegent          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ SRCS= srcs/main.c \
 	  srcs/is_complet.c \
 	  srcs/is_hidden.c \
 	  srcs/new_node.c \
-	  srcs/add_node.c \
 	  srcs/init_opt.c \
 	  srcs/manage_opt.c \
 	  srcs/reading.c \
@@ -32,7 +31,6 @@ SRCS= srcs/main.c \
 	  srcs/calibration.c \
 	  srcs/len_calcul.c \
 	  srcs/init_len.c \
-	  srcs/add_first.c \
 	  srcs/putcolor.c \
 	  srcs/print_color.c \
 	  srcs/print_link.c \
@@ -46,7 +44,6 @@ OBJT= main.o \
 	  is_complet.o \
 	  is_hidden.o \
 	  new_node.o \
-	  add_node.o \
 	  init_opt.o \
 	  manage_opt.o \
 	  reading.o \
@@ -60,7 +57,6 @@ OBJT= main.o \
 	  calibration.o \
 	  len_calcul.o \
 	  init_len.o \
-	  add_first.o \
 	  putcolor.o \
 	  print_color.o \
 	  print_link.o \

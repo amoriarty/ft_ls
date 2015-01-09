@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/16 09:16:50 by alegent           #+#    #+#             */
-/*   Updated: 2015/01/06 16:26:25 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/09 08:21:41 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,6 @@ int				is_hidden(char *name);
 int				is_complet(char *path);
 size_t			ft_digitlen(int n);
 t_node			*new_node(char *name, char *path);
-t_node			*add_node(t_node *list, char *name, char *path);
-t_node			*add_first(t_node *list, char *name, char *path);
 t_opt			*init_opt(void);
 t_opt			*manage_opt(char **av);
 int				reading(t_opt *opt, char *dir_name);
