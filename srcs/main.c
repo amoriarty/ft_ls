@@ -6,11 +6,28 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/16 09:21:27 by alegent           #+#    #+#             */
-/*   Updated: 2015/01/08 14:02:08 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/10 10:58:21 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
+
+static void			to_print(t_node *list, t_opt *opt)
+{
+	t_node			*tmp;
+
+	tmp = list;
+	if (opt->l)
+		return (print_long(list, opt));
+	else
+	{
+		while (tmp)
+		{
+			ft_putendl(tmp->name);
+			tmp = tmp->next;
+		}
+	}
+}
 
 static t_node		*list_reg(t_node *list, t_opt *opt)
 {
@@ -34,10 +51,8 @@ static t_node		*list_reg(t_node *list, t_opt *opt)
 		tmp = tmp->next;
 	}
 	if (reg)
-	{
-		print_long(reg, opt);
-		ft_putchar(EOL);
-	}
+		to_print(reg, opt);
+	ft_putchar(EOL);
 	return (list);
 }
 
