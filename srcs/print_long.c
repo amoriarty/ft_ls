@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/17 16:31:44 by alegent           #+#    #+#             */
-/*   Updated: 2015/01/08 11:28:14 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/13 09:13:54 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void				print_long(t_node *list, t_opt *opt)
 
 	tmp = list;
 	lstat(list->name, &info);
-	if (S_ISDIR(info.st_mode))
+	if (!S_ISREG(info.st_mode))
 		print_total(list);
 	while (tmp)
 	{

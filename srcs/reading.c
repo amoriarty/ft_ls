@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/17 10:05:19 by alegent           #+#    #+#             */
-/*   Updated: 2015/01/08 13:51:11 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/13 09:51:24 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 static int			is_reg(char *dir_name)
 {
+	int				ret;
 	t_stat			info;
 
-	lstat(dir_name, &info);
-	if (S_ISREG(info.st_mode))
-		return (SUCCESS);
-	return (FAILURE);
+	ret = lstat(dir_name, &info);
+	if (!S_ISREG(info.st_mode) || ret == -1)
+		return (FAILURE);
+	return (SUCCESS);
 }
 
 static int			recursive(t_node *list, t_opt *opt, char *dir_name)
