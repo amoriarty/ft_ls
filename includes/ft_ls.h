@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/16 09:16:50 by alegent           #+#    #+#             */
-/*   Updated: 2015/01/09 08:21:41 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/13 10:32:25 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int				is_complet(char *path);
 size_t			ft_digitlen(int n);
 t_node			*new_node(char *name, char *path);
 t_opt			*init_opt(void);
-t_opt			*manage_opt(char **av);
+t_opt			*manage_opt(char **av, int *x);
 int				reading(t_opt *opt, char *dir_name);
 void			print(t_node *list, t_opt *opt);
 t_time			*init_time(void);

@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/17 09:48:28 by alegent           #+#    #+#             */
-/*   Updated: 2015/01/08 13:51:42 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/13 10:35:13 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ static void			illegal(char *av)
 	}
 }
 
-t_opt				*manage_opt(char **av)
+t_opt				*manage_opt(char **av, int *x)
 {
 	int				i;
 	t_opt			*opt;
 
 	i = 1;
 	opt = init_opt();
-	while (av[i] && ft_strchr(av[i], OPT))
+	while (av[i] && ft_strchr(av[i], OPT) && av[i][1])
 	{
 		if (ft_strchr(av[i], OPT) && av[i][1])
 		{
@@ -52,5 +52,6 @@ t_opt				*manage_opt(char **av)
 		}
 		i++;
 	}
+	*x = i;
 	return (opt);
 }
