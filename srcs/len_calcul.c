@@ -6,11 +6,18 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/17 17:24:24 by alegent           #+#    #+#             */
-/*   Updated: 2015/01/13 10:49:02 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/13 11:31:30 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
+
+static t_node		*facto(t_node *tmp)
+{
+	while (tmp->next && current_dir(tmp->name))
+		tmp = tmp->next;
+	return (tmp);
+}
 
 static size_t		usr(t_stat *info)
 {
@@ -41,8 +48,8 @@ t_len				*len_calcul(t_node *list, t_opt *opt)
 	new = init_len();
 	while (tmp)
 	{
-		while (!opt->a && tmp && current_dir(tmp->name))
-			tmp = tmp->next;
+		if (!opt->a)
+			tmp = facto(tmp);
 		new->nlink = (new->nlink < ft_digitlen(tmp->info->st_nlink))
 			? ft_digitlen(tmp->info->st_nlink) : new->nlink;
 		new->lsize = (new->lsize < ft_digitlen(tmp->info->st_size))
