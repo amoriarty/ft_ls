@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/17 17:24:24 by alegent           #+#    #+#             */
-/*   Updated: 2014/12/31 15:21:33 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/13 10:49:02 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static size_t		grp(t_stat *info)
 		return (ft_digitlen(info->st_gid));
 }
 
-t_len				*len_calcul(t_node *list)
+t_len				*len_calcul(t_node *list, t_opt *opt)
 {
 	t_node			*tmp;
 	t_len			*new;
@@ -41,6 +41,8 @@ t_len				*len_calcul(t_node *list)
 	new = init_len();
 	while (tmp)
 	{
+		while (!opt->a && tmp && current_dir(tmp->name))
+			tmp = tmp->next;
 		new->nlink = (new->nlink < ft_digitlen(tmp->info->st_nlink))
 			? ft_digitlen(tmp->info->st_nlink) : new->nlink;
 		new->lsize = (new->lsize < ft_digitlen(tmp->info->st_size))

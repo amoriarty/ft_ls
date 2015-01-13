@@ -6,7 +6,7 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/16 09:16:50 by alegent           #+#    #+#             */
-/*   Updated: 2015/01/13 10:32:25 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/13 10:49:10 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void			print_perm(mode_t info);
 void			print_usr(t_stat *info, t_len *len);
 t_len			*init_len(void);
 void			calibration(size_t max);
-t_len			*len_calcul(t_node *list);
+t_len			*len_calcul(t_node *list, t_opt *opt);
 void			putcolor(char *str, char *color);
 void			print_color(char *str, t_stat *info);
 void			print_link(char *path);

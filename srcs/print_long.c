@@ -6,34 +6,34 @@
 /*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/17 16:31:44 by alegent           #+#    #+#             */
-/*   Updated: 2015/01/13 09:13:54 by alegent          ###   ########.fr       */
+/*   Updated: 2015/01/13 10:53:11 by alegent          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-static void			to_print(t_node *list, char *name, char *path, t_stat *info)
+static void			to_print(t_node *list, t_node *tmp, t_opt *opt)
 {
 	t_len			*len;
 
-	len = len_calcul(list);
-	print_perm(info->st_mode);
-	calibration(len->nlink - ft_digitlen(info->st_nlink));
-	ft_putnbr(info->st_nlink);
+	len = len_calcul(list, opt);
+	print_perm(tmp->info->st_mode);
+	calibration(len->nlink - ft_digitlen(tmp->info->st_nlink));
+	ft_putnbr(tmp->info->st_nlink);
 	ft_putchar(' ');
-	print_usr(info, len);
-	if (ft_strcmp(path, "/dev/") == 0)
-		print_major(info, len);
+	print_usr(tmp->info, len);
+	if (ft_strcmp(tmp->path, "/dev/") == 0)
+		print_major(tmp->info, len);
 	else
 	{
-		calibration(len->lsize - ft_digitlen(info->st_size));
-		ft_putnbr(info->st_size);
+		calibration(len->lsize - ft_digitlen(tmp->info->st_size));
+		ft_putnbr(tmp->info->st_size);
 	}
 	ft_putchar(' ');
-	print_time(info);
-	print_color(name, info);
-	if (S_ISLNK(info->st_mode))
-		print_link(ft_strjoin(path, name));
+	print_time(tmp->info);
+	print_color(tmp->name, tmp->info);
+	if (S_ISLNK(tmp->info->st_mode))
+		print_link(ft_strjoin(tmp->path, tmp->name));
 	ft_putchar(EOL);
 }
 
@@ -51,10 +51,10 @@ void				print_long(t_node *list, t_opt *opt)
 		if (opt->a == FALSE)
 		{
 			if (is_hidden(tmp->name) == FALSE || S_ISREG(info.st_mode))
-				to_print(list, tmp->name, tmp->path, tmp->info);
+				to_print(list, tmp, opt);
 		}
 		else
-			to_print(list, tmp->name, tmp->path, tmp->info);
+			to_print(list, tmp, opt);
 		tmp = tmp->next;
 	}
 }
