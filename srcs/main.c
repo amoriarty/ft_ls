@@ -87,6 +87,7 @@ static void			get_read(int ac, char **av)
 	t_node			*new;
 
 	x = 1;
+	list = NULL;
 	opt = manage_opt(av, &x);
 	while (x < ac)
 	{
